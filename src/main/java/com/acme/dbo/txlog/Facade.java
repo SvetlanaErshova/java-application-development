@@ -9,7 +9,7 @@ public class Facade {
     public static final String REFERENCE_PREFIX = "reference: ";
     public static final String CHAR_PREFIX = "char: ";
 
-    public static Integer intAccumulator = 0;
+    public static long intAccumulator = 0;
     public static byte byteAccumulator;
     public static String stringAccumulator;
     public static int stringCounter;
@@ -17,7 +17,7 @@ public class Facade {
     public static void log(int message) {
         stringAccumulator = null;
         stringCounter = 0;
-        long longMessage = message + intAccumulator.longValue();
+        long longMessage = message + intAccumulator;
         if (longMessage > Integer.MAX_VALUE) {
             print(PRIMITIVE_PREFIX + Integer.MAX_VALUE);
         } else {
