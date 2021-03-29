@@ -30,6 +30,7 @@ public class Facade {
         long longByte = message + byteAccumulator;
         if (longByte > Byte.MAX_VALUE) {
             print(PRIMITIVE_PREFIX + Byte.MAX_VALUE);
+            flash();
         } else {
             byteAccumulator = (byte) (byteAccumulator + message);
             print(PRIMITIVE_PREFIX + byteAccumulator);
@@ -42,6 +43,7 @@ public class Facade {
 
     public static void log(String message) {
         intAccumulator = 0;
+        byteAccumulator = 0;
         if (stringAccumulator == null) {
             stringAccumulator = message;
             print(STRING_PREFIX + message);
